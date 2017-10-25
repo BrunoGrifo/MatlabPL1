@@ -5,7 +5,7 @@ function [ fonteInf,Alf ] = shiftsimbolos(fonte,sllbits )
     end
     count=1;
     fonteInf=zeros(1,N/2);
-    for k = 1:2:N
+    for k = 1:2:N-1
         shiftleft=bitsll(fonte(k),sllbits);
         simbolo=shiftleft+fonte(k+1);
         fonteInf(count)=simbolo;

@@ -47,7 +47,6 @@ elseif ext == '.txt'
     T = fscanf(fileID,'%s');
     fonteInf = double(T);
     alfabeto = [double('A'):double('Z'),double('a'):double('z')];
-    disp(imgInfo);
     histogram(fonteInf,alfabeto);
     [H,Z,bincounts]=entropia(fonteInf,alfabeto);
     fclose(fileID);
@@ -59,9 +58,17 @@ elseif ext == '.txt'
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
     
+    [Entropia2a2]=entropia2a2(fonteInf,8);
+    fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
     
     
 end
 
+query = [2 6 4 10 5 9 5 8 0 8];
+target = [6 8 9 7 2 4 9 9 4 9 1 4 8 0 1 2 2 6 3 2 0 7 4 9 5 4 8 5 2 7 8 0 7 4 8 5 7 4 3 2 2 7 3 5 2 7 4 9 9 6];
+alfabeto =(0:10);
+step = 1;
+
+infoMutua=informacaoMutua(query,albafeto,target,sep);
 
 
