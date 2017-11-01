@@ -1,5 +1,6 @@
 function [info] = informacaoMutua(query,alfabeto,target,step)
     %Tamanho da query
+
     querySize = numel(query);
     %Tamanho do target
     targetSize = numel(target);
@@ -20,5 +21,6 @@ function [info] = informacaoMutua(query,alfabeto,target,step)
         Ha = entropia(fonteInf,Alf); %entropia H(X,Y)
         info(j+1) = Hq+Ht-(Ha);
     end
+
 end
 

@@ -19,6 +19,7 @@ if ext== '.wav'
     
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
+
     
     [Entropia2a2]=entropia2a2(fonteInf,8);
     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
@@ -27,6 +28,7 @@ if ext== '.wav'
 elseif ext == '.bmp'
     fonteInf = imread(filename);
     fonteInf = double(fonteInf);
+
     imgInfo= imfinfo(filename);
     alfabeto= 0:((2^imgInfo.BitDepth)-1);
     disp(imgInfo);
@@ -49,7 +51,9 @@ elseif ext == '.txt'
     T = fscanf(fileID,'%s');
     fonteInf = double(T);
     alfabeto = [double('A'):double('Z'),double('a'):double('z')];
-    %histogram(fonteInf,alfabeto);
+
+    histogram(fonteInf,alfabeto);
+
     [H,Z,bincounts]=entropia(fonteInf,alfabeto);
     fclose(fileID);
     fprintf('Entropia de %s: %.4f\n',filename,H);
@@ -71,7 +75,8 @@ target = [6 8 9 7 2 4 9 9 4 9 1 4 8 0 1 2 2 6 3 2 0 7 4 9 5 4 8 5 2 7 8 0 7 4 8 
 alfabeto =(0:10);
 step = 1;
 
-%infoMutua=informacaoMutua(query,alfabeto,target,step);
+infoMutua=informacaoMutua(query,alfabeto,target,step);
 
 alfabeto=-1:d:1-d;
+
 
