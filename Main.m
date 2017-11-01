@@ -19,12 +19,13 @@ if ext== '.wav'
     
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
-    
-    %entropia2a2Musica();
-
+   
+    [Entropia2a2]=entropia2a2(fonteInf,info.BitsPerSample);
+    fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
     
 elseif ext == '.bmp'
     fonteInf = imread(filename);
+    fonteInf=double(fonteInf);
     imgInfo= imfinfo(filename);
     alfabeto= 0:((2^imgInfo.BitDepth)-1);
     disp(imgInfo);

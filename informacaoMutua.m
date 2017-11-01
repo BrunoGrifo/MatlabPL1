@@ -6,6 +6,8 @@ function [info] = informacaoMutua(query,alfabeto,target,step)
     targetSize = length(target); 
     
     
+    
+    
 
 end
 
