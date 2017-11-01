@@ -1,4 +1,6 @@
 function [ fonteInf,Alf ] = shiftsimbolos(fonte,sllbits )
+
+    fonte = reshape( fonte.' ,1,numel(fonte));
     N = numel(fonte);
     if(mod(N,2)==1)
         N=N-1;
