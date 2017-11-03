@@ -4,7 +4,7 @@ function [info] = informacaoMutua(query,alfabeto,target,step, bitspersample)
     %Tamanho do target
     targetSize = numel(target);
     Hq = entropia(query, alfabeto);
-    N = round((targetSize - querySize+1) / step);
+    N = ceil((targetSize - querySize+1) / step);
     fonteInf=zeros(1,querySize);
     info = zeros(1,N);
     count2 = 0;
