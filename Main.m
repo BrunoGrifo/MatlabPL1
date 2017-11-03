@@ -15,10 +15,10 @@ if ext== '.wav'
     fprintf('Entropia de %s: %.4f\n',filename,H);
     
 
-%     pause(2);
-%     
-%     Lmed=exe4(bincounts,Z);
-%     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
+    pause(2);
+    
+    Lmed=exe4(bincounts,Z);
+    fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
 %     
 %     [Entropia2a2]=entropia2a2(fonteInf,info.BitsPerSample);
 %     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
@@ -40,8 +40,8 @@ elseif ext == '.bmp'
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
     
-    [Entropia2a2]=entropia2a2(fonteInf,imgInfo.BitDepth);
-    fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
+%     [Entropia2a2]=entropia2a2(fonteInf,imgInfo.BitDepth);
+%     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
     
     
 elseif ext == '.txt'
@@ -60,9 +60,9 @@ elseif ext == '.txt'
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
     
-    [Entropia2a2]=entropia2a2(fonteInf,8);
-    fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
-    
+%     [Entropia2a2]=entropia2a2(fonteInf,8);
+%     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
+%     
     
 end
 
