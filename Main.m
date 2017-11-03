@@ -46,7 +46,7 @@ elseif ext == '.bmp'
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
     
-    [Entropia2a2]=entropia2a2(fonteInf,imgInfo.BitDepth);
+    [Entropia2a2]=entropia2a2(fonteInf,imgInfo.BitDepth,filename);
     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
     
     
@@ -69,7 +69,7 @@ elseif ext == '.txt'
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
     
-    [Entropia2a2]=entropia2a2(fonteInf,8);
+    [Entropia2a2]=entropia2a2(fonteInf,8,filename);
     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
 %     
     
