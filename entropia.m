@@ -2,7 +2,6 @@ function [H,Z, bincounts] = entropia(P,A)
 
     P = reshape(P,1,[]);
     %P = reshape( P,1,numel(P));
-
     N = numel(A);
     bincounts = histc(P,A);
     NF = sum(bincounts);
