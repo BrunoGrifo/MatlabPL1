@@ -1,4 +1,4 @@
-function [info] = informacaoMutua(query,alfabeto,target,step)
+function [info] = informacaoMutua(query,alfabeto,target,step, bitspersample)
     %Tamanho da query
     querySize = numel(query);
     %Tamanho do target
@@ -11,7 +11,7 @@ function [info] = informacaoMutua(query,alfabeto,target,step)
     for j = 0:step:(N*step)-1
         count = 1;
         for k = 1:1:querySize
-            shiftleft=bitsll(query(k),4);
+            shiftleft=bitsll(query(k),bitspersample);
             simbolo=shiftleft+target(k+j);
             fonteInf(count)=simbolo;
             count = count + 1;
