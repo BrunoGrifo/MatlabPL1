@@ -10,15 +10,18 @@ if ext== '.wav'
     d=(1-(-1))/2^info.BitsPerSample;
     alfabeto=-1:d:1-d;
     histogram(fonteInf,alfabeto);
+    ylabel('Numero de Ocorrências');
+    xlabel('Alfabeto');
+    title(filename);
     disp(info);
     [H,Z,bincounts]=entropia(fonteInf,alfabeto);
     fprintf('Entropia de %s: %.4f\n',filename,H);
     
-
-    pause(2);
-    
-    Lmed=exe4(bincounts,Z);
-    fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
+% 
+%     pause(2);
+%     
+%     Lmed=exe4(bincounts,Z);
+%     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
 %     
 %     [Entropia2a2]=entropia2a2(fonteInf,info.BitsPerSample);
 %     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
@@ -31,6 +34,9 @@ elseif ext == '.bmp'
     alfabeto= 0:((2^imgInfo.BitDepth)-1);
     disp(imgInfo);
     histogram(fonteInf,alfabeto);
+    ylabel('Numero de Ocorrências');
+    xlabel('Alfabeto');
+    title(filename);
     xlim([0 (2^imgInfo.BitDepth)-1]);
     [H,Z,bincounts]=entropia(fonteInf,alfabeto);
     fprintf('Entropia de %s: %.4f\n',filename,H);
@@ -40,8 +46,8 @@ elseif ext == '.bmp'
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
     
-%     [Entropia2a2]=entropia2a2(fonteInf,imgInfo.BitDepth);
-%     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
+    [Entropia2a2]=entropia2a2(fonteInf,imgInfo.BitDepth);
+    fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
     
     
 elseif ext == '.txt'
@@ -50,6 +56,9 @@ elseif ext == '.txt'
     fonteInf = double(T);
     alfabeto = [double('A'):double('Z'),double('a'):double('z')];
     histogram(fonteInf,alfabeto);
+    ylabel('Numero de Ocorrências');
+    xlabel('Alfabeto');
+    title(filename);
     [H,Z,bincounts]=entropia(fonteInf,alfabeto);
     fclose(fileID);
     fprintf('Entropia de %s: %.4f\n',filename,H);
@@ -60,8 +69,8 @@ elseif ext == '.txt'
     Lmed=exe4(bincounts,Z);
     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
     
-%     [Entropia2a2]=entropia2a2(fonteInf,8);
-%     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
+    [Entropia2a2]=entropia2a2(fonteInf,8);
+    fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
 %     
     
 end
