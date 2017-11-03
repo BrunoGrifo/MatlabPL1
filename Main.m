@@ -17,14 +17,14 @@ if ext== '.wav'
     [H,Z,bincounts]=entropia(fonteInf,alfabeto);
     fprintf('Entropia de %s: %.4f\n',filename,H);
     
-% 
-%     pause(2);
-%     
-%     Lmed=exe4(bincounts,Z);
-%     fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
-%     
-%     [Entropia2a2]=entropia2a2(fonteInf,info.BitsPerSample);
-%     fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
+
+    pause(2);
+    
+    Lmed=exe4(bincounts,Z);
+    fprintf('Comprimento medio de bits por simbolo: %.4f\n',Lmed);
+    
+    [Entropia2a2]=entropia2a2(fonteInf,info.BitsPerSample,filename);
+    fprintf('Entropia 2 a 2: %.4f\n',Entropia2a2);
 
     
 elseif ext == '.bmp'
