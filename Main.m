@@ -115,7 +115,6 @@ infoMutua=informacaoMutua(query,alfabeto,target,step, 8);
     xlabel('Número de Janelas')
     ylabel('Informação Mútua')
     
-    %ylim([0 4]);
     %var = var(infoMutua);
     m = mean(infoMutua2);%média
     %max();
@@ -143,26 +142,66 @@ infoMutua=informacaoMutua(query,alfabeto,target,step, 8);
     infoMutua5=informacaoMutua(query(:,1)',alfabeto,target5',step, info.BitsPerSample);
     infoMutua6=informacaoMutua(query(:,1)',alfabeto,target6',step, info.BitsPerSample);
     infoMutua7=informacaoMutua(query(:,1)',alfabeto,target7',step, info.BitsPerSample);
-
-    %ylim([0 4]);
-    %var = var(infoMutua);
+    
+    figure(1);
+    var1 = var(infoMutua1);
+    plot(infoMutua1);
+    ylabel('Informação Mútua');
+    xlabel('Número de Janelas');
+    title('song01');
+    figure(2);
+    var2 = var(infoMutua2);
+    plot(infoMutua2);
+    ylabel('Informação Mútua');
+    xlabel('Número de Janelas');
+    title('song02');
+    figure(3);
+    var3 = var(infoMutua3);
+    plot(infoMutua3);
+    ylabel('Informação Mútua');
+    xlabel('Número de Janelas');
+    title('song03');
+    figure(4);
+    var4 = var(infoMutua4);
+    plot(infoMutua4);
+    ylabel('Informação Mútua');
+    xlabel('Número de Janelas');
+    title('song04');
+    figure(5);
+    var5 = var(infoMutua5);
+    plot(infoMutua5);
+    ylabel('Informação Mútua');
+    xlabel('Número de Janelas');
+    title('song05');
+    figure(6);
+    var6 = var(infoMutua6);
+    plot(infoMutua6);
+    ylabel('Informação Mútua');
+    xlabel('Número de Janelas');
+    title('song06');
+    figure(7);
+    var7 = var(infoMutua7);
+    plot(infoMutua7);
+    ylabel('Informação Mútua');
+    xlabel('Número de Janelas');
+    title('song07');
     
     %Valores maximos de cada musica com o target guitarSolo.wav
-    clear max; %https://stackoverflow.com/questions/16568841/how-to-find-min-and-max-of-float-number-in-matlab
+    %clear max; %https://stackoverflow.com/questions/16568841/how-to-find-min-and-max-of-float-number-in-matlab
     max1 = max(infoMutua1);
-    fprintf('Valor maximo de informação mutua da música Song01.wav com a música guitarSolo.wav',max1);
+    fprintf('Valor maximo de informação mutua da música Song01.wav com a música guitarSolo.wav: %.4f\n',max1);
     max2 = max(infoMutua2);
-    fprintf('Valor maximo de informação mutua da música Song02.wav com a música guitarSolo.wav',max2);
+    fprintf('Valor maximo de informação mutua da música Song02.wav com a música guitarSolo.wav: %.4f\n',max2);
     max3 = max(infoMutua3);
-    fprintf('Valor maximo de informação mutua da música Song03.wav com a música guitarSolo.wav',max3);
+    fprintf('Valor maximo de informação mutua da música Song03.wav com a música guitarSolo.wav: %.4f\n',max3);
     max4 = max(infoMutua4);
-    fprintf('Valor maximo de informação mutua da música Song04.wav com a música guitarSolo.wav',max4);
+    fprintf('Valor maximo de informação mutua da música Song04.wav com a música guitarSolo.wav: %.4f\n',max4);
     max5 = max(infoMutua5);
-    fprintf('Valor maximo de informação mutua da música Song05.wav com a música guitarSolo.wav',max5);
+    fprintf('Valor maximo de informação mutua da música Song05.wav com a música guitarSolo.wav: %.4f\n',max5);
     max6 = max(infoMutua6);
-    fprintf('Valor maximo de informação mutua da música Song06.wav com a música guitarSolo.wav',max6);
+    fprintf('Valor maximo de informação mutua da música Song06.wav com a música guitarSolo.wav: %.4f\n',max6);
     max7 = max(infoMutua7);
-    fprintf('Valor maximo de informação mutua da música Song07.wav com a música guitarSolo.wav',max7);
+    fprintf('Valor maximo de informação mutua da música Song07.wav com a música guitarSolo.wav: %.4f\n',max7);
     
     
     m1 = mean(infoMutua1);%média
@@ -175,4 +214,6 @@ infoMutua=informacaoMutua(query,alfabeto,target,step, 8);
     
     infoFinal = [m1, m2, m3, m4, m5, m6, m7];
     infoFinal2 = sort(infoFinal, 'descend'); 
-    plot(infoFinal);
+    plot(infoFinal2);
+    ylabel('Informação Mútua');
+    title('Medias das informações mútuas de cada song decrescente');
